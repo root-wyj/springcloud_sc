@@ -12,8 +12,8 @@ spring:
           search-paths: /cloud_properties
 
       label: master
-      username: 997269684@qq.com
-      password: wyj123456
+      username: *
+      password: *
 
 eureka:
   client:
