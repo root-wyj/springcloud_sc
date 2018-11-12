@@ -8,7 +8,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/root-wyj/note_all.git #
+          uri: https://github.com/root-wyj/springcloud_sc.git #
           search-paths: /cloud_properties
 
       label: master
