@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: ribbon
+    sleuth:
+      sampler:
+        probability: 0.5 #\u6307\u5B9A\u62BD\u6837\u6BD4\u4F8B \u9ED8\u8BA40.1
+  zipkin:
+    base-url: http://localhost:8888
+
+server:
+  port: 3333
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+    # \u4ECE\u6CE8\u518C\u4E2D\u5FC3\u83B7\u53D6\u6CE8\u518C\u670D\u52A1\u4FE1\u606F\u7684\u95F4\u9694 \u9ED8\u8BA430s
+    registry-fetch-interval-seconds: 5
+
+# \u66F4\u591A\u914D\u7F6E\u53C2\u8003\uFF1Ahttps://blog.csdn.net/harris135/article/details/77879148?locationNum=3&fps=1
+hystrix:
+  command:
+    default:
+      circuitBreaker:
+        errorThresholdPercentage: 60 # \u8BBE\u7F6E\u9519\u8BEF\u767E\u5206\u6BD4\u4E0B\u9650
+        requestVolumeThreshold: 5 # \u8BBE\u7F6E\u8BF7\u6C42\u603B\u6570\u7684\u4E0B\u9650
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000 #\u8D85\u65F6\u65F6\u95F4
+
+

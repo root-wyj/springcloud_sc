@@ -1,0 +1,22 @@
+server:
+  port: 9999
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/root-wyj/note_all.git #
+          search-paths: /cloud_properties
+
+      label: master
+      username: 997269684@qq.com
+      password: wyj123456
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka
+

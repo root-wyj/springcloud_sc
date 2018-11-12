@@ -1,0 +1,29 @@
+
+#将服务注册到服务中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+
+spring:
+  cloud:
+    config:
+      discovery:
+        enabled: true # 开启配置服务发现
+        service-id: config-server # 配置中心的serviceId
+
+      #  另外还需要的配置文件的服务名 就是该服务的服务名 config-client，
+      #  所以请求的url=http://localhost:9999/config-client/dev/master
+      uri: http://localhost:9999/ # 配置中心uri
+      label: master # 配置文件所在分支
+      profile: dev # 配置文件所用的环境
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  security:
+    # springboot 1.5.X 以上默认开通了安全认证，所以需要在配置文件application.properties添加以下配置，
+    # 以post请求的方式来访问http://localhost:8081/refresh 就会更新修改后的配置文件
+    enabled: false
