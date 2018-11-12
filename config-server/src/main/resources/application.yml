@@ -9,7 +9,7 @@ spring:
       server:
         git:
           uri: https://github.com/root-wyj/springcloud_sc.git #
-          search-paths: /cloud_properties
+          search-paths: /cloud_config_properties
 
       label: master
       username: *
