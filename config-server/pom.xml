@@ -26,6 +26,15 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-server</artifactId>
         </dependency>
+
+        <!--加入消息总线，使所有config 客户端都能自动更新-->
+
+        <!--加入消息 总线 总是跑不起来 所以暂时放弃-->
+
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.cloud</groupId>-->
+            <!--<artifactId>spring-cloud-starter-bus-amqp</artifactId>-->
+        <!--</dependency>-->
     </dependencies>
 
     <build>

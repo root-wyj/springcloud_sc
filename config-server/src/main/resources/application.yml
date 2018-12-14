@@ -12,11 +12,20 @@ spring:
           search-paths: /cloud_config_properties
 
       label: master
-      username: *
-      password: *
+      username: 997269684@qq.com
+      password: wyj123456
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: guest
+#    password: guest
 
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:1111/eureka
-
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  # 开启 bus-refresh 端口
